@@ -28,6 +28,8 @@ namespace LJardim.InventorySystem {
         private static IEnumerator RemoveRigidBody(GameObject instantiated) {
             yield return new WaitForSeconds(3);
             Destroy(instantiated.GetComponent<Rigidbody>());
+
+            instantiated.GetComponent<BoxCollider>().isTrigger = true;
         }
     }
 }
